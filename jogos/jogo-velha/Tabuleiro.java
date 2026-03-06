@@ -26,6 +26,10 @@ public class Tabuleiro {
         return resultado;
     }
 
+    public char[][] getTabuleiroCPU(){
+        return tabuleiro;
+    }
+
     public boolean marcarPosicao(int linha, int coluna, char simbolo){
         if (linha < 0 || linha > 2 || coluna < 0 || coluna > 2){
             return false;
