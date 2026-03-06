@@ -17,17 +17,23 @@ public class Jogo{
             while(jogoEmAndamento){
             do{
                 System.out.println("Faça sua jogada");
-                System.out.print("Informe a linha: ");
-                int linha = scanner.nextInt();
-                System.out.print("Informe a coluna: ");
-                int coluna = scanner.nextInt();
-                jogada = jogada(linha, coluna, 'X');
+                System.out.print("Informe a casa selecionada: ");
+                int casajgd = scanner.nextInt();
+                
+                jogada = jogada(casajgd, 'X');
             } while (!jogada);
 
             temVitoria = tabuleiro.temVitoria('X');
             if (temVitoria){
                 jogoEmAndamento = false;
                 System.out.println("Parabéns! Você venceu!");
+                verTabuleiro();
+                break;
+            }
+            velha = tabuleiro.velha();
+            if (velha){
+                System.out.println("Deu velha, jogue de novo e tente ganhar!");
+                jogoEmAndamento = false;
                 verTabuleiro();
                 break;
             }
@@ -40,6 +46,7 @@ public class Jogo{
             if (velha){
                 System.out.println("Deu velha, jogue de novo e tente ganhar!");
                 jogoEmAndamento = false;
+                verTabuleiro();
                 break;
             }
             
@@ -59,8 +66,8 @@ public class Jogo{
         System.out.println(tabuleiro.verTabuleiro());
     }
 
-    public boolean jogada(int linha, int coluna, char simbolo){
-        boolean jogadaValida = tabuleiro.marcarPosicao(linha, coluna, simbolo),temVitoria = false;
+    public boolean jogada(int casajgd, char simbolo){
+        boolean jogadaValida = tabuleiro.marcarPosicao(casajgd, simbolo),temVitoria = false;
         if (!jogadaValida){
             System.out.println("Jogada inválida. Tente novamente.");
             return false;

@@ -1,18 +1,4 @@
-# JogoVelha.class
-Ele apenas inicia o codigo e chama o Jogo.class
-
-# Jogo.class
-    Faz todas as chamadas para gravar uma jogada, exibir tabuleiro, verificar se o jogo acabou, etc.
-
-# Tabuleiro.class
-    Ele é responsável por criar o tabuleiro, exibir o tabuleiro, gravar jogadas e etc.
-
-# CPU.class
-    é um bot que joga aleatoriamente no momento.
-    
-# README Jogo da velha
-
-## 🎮 Jogo da Velha em Java
+# 🎮 Jogo da Velha em Java
 
 Projeto simples jogano no terminal feito para praticar **Programação Orientada a Objetos em Java**.
 Basicamente o jogador (`X`) VS uma CPU (`O`).
@@ -32,7 +18,7 @@ javac *.java
 Execute:
 
 ```bash
-java JogoVelha
+java Velha
 ```
 
 ---
@@ -41,16 +27,20 @@ java JogoVelha
 
 O tabuleiro é uma matriz 3x3.
 
-Você deve informar:
+Para jogar, bastar informar a casa desejada
 
-* linha (0 a 2)
-* coluna (0 a 2)
+┌───┬───┬───┐
+│ 1 │ 2 │ 3 │
+├───┼───┼───┤
+│ 4 │ 5 │ 6 │
+├───┼───┼───┤
+│ 7 │ 8 │ 9 │
+└───┴───┴───┘
 
 Exemplo:
 
 ```
-Informe a linha: 1
-Informe a coluna: 2
+Informe a casa selecionada: 5
 ```
 
 ---
@@ -60,14 +50,13 @@ Informe a coluna: 2
 * Verificação de vitória
 * Detecção de empate (velha)
 * Impede jogadas inválidas
-
-A CPU no momento só escolhe posições **aleatórias válidas**.
+* CPU com logica básica
 
 ---
 
 ## 🏗️ Estrutura do projeto
 
-### `JogoVelha`
+### `Velha`
 
 Ponto de entrada do programa.
 Apenas inicia a partida. 
@@ -92,7 +81,7 @@ Representa o estado do jogo:
 
 ### `CPU`
 
-Responsável pela jogada aleatoria do computador (aleatória). 
+Implementa a lógica da jogada do computador.
 
 ---
 
